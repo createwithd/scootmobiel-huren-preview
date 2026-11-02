@@ -142,11 +142,11 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;m
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:36px}
 @media(max-width:960px){.steps{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
-.step{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.step .ph{aspect-ratio:4/3;overflow:hidden;position:relative}
-.step .ph img,.step .ph video{width:100%;height:100%;object-fit:cover}
-.step .n{position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-family:Lexend;font-weight:700;display:grid;place-items:center;font-size:19px}
-.step .t{padding:18px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative}
+.step .sh{display:flex;align-items:center;justify-content:space-between;padding:22px 22px 0}
+.step .n{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-family:Lexend;font-weight:700;display:grid;place-items:center;font-size:20px}
+.step .si{width:60px;height:60px;border-radius:16px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.step .t{padding:18px 22px 24px}
 .step p{font-size:17px;color:var(--muted);margin-top:6px}
 
 .stripgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
@@ -377,7 +377,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
 
 <!-- doelgroep 2: wmo-wachten -->
 <section class="sec alt gutter" id="wmo"><div class="wrap split rev">
-  <div class="media"><img src="img/bakker.webp" alt="Oudere dame doet brood in de mand van de scootmobiel bij de bakker" loading="lazy"></div>
+  <div class="media"><img src="img/terras.webp" alt="Echtpaar drinkt koffie op een terras aan de gracht, hij zit op de scootmobiel" loading="lazy"></div>
   <div class="copy">
     <span class="eyebrow">Wachten op je scootmobiel van de gemeente</span>
     <h2>Wacht je op de Wmo? Blijf niet thuis zitten.</h2>
@@ -415,10 +415,10 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
   <span class="eyebrow">Zo werkt het</span>
   <h2>Vandaag geregeld, morgen weer de deur uit</h2>
   <div class="steps">
-    <div class="step"><div class="ph"><img src="img/portret.webp" alt="" loading="lazy"><span class="n">1</span></div><div class="t"><h3>Je vraagt hem aan</h3><p>In twee minuten: voor wie, vanaf wanneer en hoe lang. Of je appt ons.</p></div></div>
-    <div class="step"><div class="ph"><img src="img/voordeur.webp" alt="" loading="lazy"><span class="n">2</span></div><div class="t"><h3>Morgen bezorgd</h3><p>We bellen je om een tijd af te spreken en brengen hem met volle accu.</p></div></div>
-    <div class="step"><div class="ph"><img src="img/kleindochter.webp" alt="" loading="lazy"><span class="n">3</span></div><div class="t"><h3>Uitleg en proefrondje</h3><p>We leggen alles rustig uit en rijden samen een rondje. Pas als je het zelf durft, gaan wij weg.</p></div></div>
-    <div class="step"><div class="ph"><img src="img/gracht.webp" alt="" loading="lazy"><span class="n">4</span></div><div class="t"><h3>Klaar? Wij halen hem op</h3><p>Je laat het weten en wij halen hem op. Is alles in orde, dan krijg je je borg terug.</p></div></div>
+    <div class="step"><div class="sh"><span class="n">1</span><span class="si"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span></div><div class="t"><h3>Je vraagt hem aan</h3><p>In twee minuten: voor wie, vanaf wanneer en hoe lang. Of je appt ons.</p></div></div>
+    <div class="step"><div class="sh"><span class="n">2</span><span class="si"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span></div><div class="t"><h3>Morgen bezorgd</h3><p>We bellen je om een tijd af te spreken en brengen hem met volle accu.</p></div></div>
+    <div class="step"><div class="sh"><span class="n">3</span><span class="si"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg></span></div><div class="t"><h3>Uitleg en proefrondje</h3><p>We leggen alles rustig uit en rijden samen een rondje. Pas als je het zelf durft, gaan wij weg.</p></div></div>
+    <div class="step"><div class="sh"><span class="n">4</span><span class="si"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg></span></div><div class="t"><h3>Klaar? Wij halen hem op</h3><p>Je laat het weten en wij halen hem op. Is alles in orde, dan krijg je je borg terug.</p></div></div>
   </div>
 </div></section>
 
@@ -426,7 +426,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
 <section class="sec gutter strip"><div class="wrap">
   <span class="eyebrow">Weer gewoon meedoen</span>
   <h2>Daar doe je het voor</h2>
-  <div class="stripgrid"><figure><img src="img/supermarkt.webp" alt="Zelf boodschappen doen" loading="lazy"><figcaption>Zelf boodschappen doen</figcaption></figure><figure><img src="img/bankje-vriendin.webp" alt="Bijkletsen in het park" loading="lazy"><figcaption>Bijkletsen in het park</figcaption></figure><figure><img src="img/terras.webp" alt="Koffie op het terras" loading="lazy"><figcaption>Koffie op het terras</figcaption></figure><figure><img src="img/buurvrouw.webp" alt="Even zwaaien naar de buren" loading="lazy"><figcaption>Even zwaaien naar de buren</figcaption></figure></div>
+  <div class="stripgrid"><figure><img src="img/supermarkt.webp" alt="Zelf boodschappen doen" loading="lazy"><figcaption>Zelf boodschappen doen</figcaption></figure><figure><img src="img/bankje-vriendin.webp" alt="Bijkletsen in het park" loading="lazy"><figcaption>Bijkletsen in het park</figcaption></figure><figure><img src="img/bakker.webp" alt="Zelf naar de bakker" loading="lazy"><figcaption>Zelf naar de bakker</figcaption></figure><figure><img src="img/kleindochter.webp" alt="Mee met de kleinkinderen" loading="lazy"><figcaption>Mee met de kleinkinderen</figcaption></figure></div>
 </div></section>
 
 <!-- beloftes -->
@@ -529,7 +529,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
     <p>Naar de markt, de bakker, de fysio of de kleinkinderen. Vraag de Carpo&nbsp;4 vandaag aan, dan staat hij morgen voor je deur.</p>
     <div class="btns"><button class="btn btn-main" data-open>Vraag de Carpo&nbsp;4 aan</button><a class="btn btn-ghost" href="https://wa.me/31570448955" target="_blank" rel="noopener" data-wa>Stuur een appje</a></div>
   </div>
-  <div class="media"><img src="img/gracht.webp" alt="De Carpo 4 op een herfstpad langs de gracht" loading="lazy"></div>
+  <div class="media"><img src="img/buurvrouw.webp" alt="Vrouw op de scootmobiel zwaait naar de buurvrouw" loading="lazy"></div>
 </div></section>
 </main>
 <footer class="site">© 2026 Scootmobiel huren · bezorgd in heel Nederland · preview, gegevens volgen</footer>
