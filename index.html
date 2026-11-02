@@ -104,8 +104,10 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;m
 .zorg b{font-family:Lexend;font-weight:600;font-size:17px}
 .zorg small{display:block;font-size:16px;color:var(--muted)}
 .zorg .p{margin-left:auto;font-weight:700;white-space:nowrap;font-size:17px}
+.zorg b{white-space:nowrap}
 .zorg:has(input:checked){border-color:var(--green);background:var(--green-soft)}
-.sum{display:flex;justify-content:space-between;gap:10px;margin-top:16px;font-size:16px;color:var(--muted);border-top:1px dashed var(--line);padding-top:14px}
+.sum{display:grid;gap:6px;margin-top:16px;font-size:16px;color:var(--muted);border-top:1px dashed var(--line);padding-top:14px}
+.sum div{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .sum b{color:var(--ink)}
 .cta-row{display:grid;gap:10px;margin-top:16px}
 .cta-row .btn{width:100%;min-height:60px;font-size:19px}
@@ -122,12 +124,12 @@ header.top .wrap{display:flex;align-items:center;justify-content:space-between;m
 .chips a:hover{border-color:var(--ink)}
 
 /* sections */
-.sec{padding:80px 0}
+.sec{padding-top:80px;padding-bottom:80px}
 .sec.alt{background:var(--paper)}
 .eyebrow{display:inline-block;font-family:Lexend;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .split.rev .media{order:2}
-@media(max-width:900px){.split{grid-template-columns:1fr;gap:28px}.split.rev .media{order:0}.sec{padding:56px 0}}
+@media(max-width:900px){.split{grid-template-columns:1fr;gap:28px}.split.rev .media{order:0}.sec{padding-top:56px;padding-bottom:56px}}
 .media{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#eee}
 .media img,.media video{width:100%;height:100%;object-fit:cover}
 .media.wide{aspect-ratio:3/2}
@@ -280,7 +282,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
 .done{text-align:center;padding-top:30px}
 .done i{display:grid;place-items:center;width:84px;height:84px;margin:0 auto 18px;border-radius:50%;background:var(--green-soft);color:var(--green)}
 
-@media(max-width:600px){.usp span:not(:first-child){display:none}.logo{font-size:19px}.btn-sm{padding:0 14px}}
+@media(max-width:600px){.stripgrid{gap:10px}.stripgrid figcaption{font-size:13.5px;padding:5px 9px;left:8px;bottom:8px;right:auto;max-width:calc(100% - 16px)}.copy .btn{width:100%}.zorg{flex-wrap:wrap;column-gap:12px;row-gap:2px}.zorg .p{order:3;flex-basis:100%;margin-left:36px;font-size:16px}.cta-row .btn{font-size:17px;min-height:58px;padding:0 12px;white-space:nowrap}.trust{grid-template-columns:1fr;gap:8px}.ship{font-size:16px}.zorg{padding:12px 14px}.usp span:not(:first-child){display:none}.logo{font-size:19px}.btn-sm{padding:0 14px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -328,8 +330,8 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
     <div class="incl">
       <h3>Bij elke huur</h3>
       <ul>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg><b>Morgen bij je thuis</b>, in heel Nederland</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg><b>Uitleg en samen een proefrondje</b> aan huis</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg><span><b>Morgen bij je thuis</b>, in heel Nederland</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg><span><b>Uitleg en samen een proefrondje</b> aan huis</span></li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Volle accu en lader erbij</li>
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Verlengen kan altijd, wij halen hem op als je klaar bent</li>
       </ul>
@@ -337,7 +339,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
 
     <label class="zorg"><input type="checkbox" id="zorg"><span><b>Zorgeloos-dekking</b><small>Schade en diefstal gedekt</small></span><span class="p" id="zorgP">+ € 15 p/m</span></label>
 
-    <div class="sum"><span>Eenmalig bezorgen, uitleg en ophalen <b>€&nbsp;150</b></span><span>Borg <b>€ 200</b>, krijg je terug</span></div>
+    <div class="sum"><div><span>Bezorgen, uitleg en ophalen (eenmalig)</span><b>€&nbsp;150</b></div><div><span>Borg, krijg je terug</span><b>€&nbsp;200</b></div></div>
 
     <div class="cta-row">
       <button class="btn btn-main" data-open data-buy id="ctaMain">Vraag hem aan · € 239 p/m</button>
@@ -548,10 +550,10 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
   /* ---------- galerij ---------- */
   const media = [
     {t:'img', src:'img/studio.webp', l:'Vermeiren Carpo&nbsp;4 huren', s:'Morgen bij je thuis · uitleg en proefrondje aan huis', hs:[[86,13,'Comfortstoel','l'],[25,31,'Mand voorop','r'],[88,73,'Vier wielen, staat stevig','l',1]]},
-    {t:'vid', src:'vid/studio-draai.mp4', poster:'img/studio.webp', l:'Bekijk hem van alle kanten', s:'Vermeiren Carpo&nbsp;4'},
     {t:'img', src:'img/markt.webp', l:'Weer zelf naar de markt', s:'Boodschappen doen wanneer jij wilt'},
     {t:'img', src:'img/fysio.webp', l:'Zelf naar de fysio', s:'Ook met een nieuwe knie of heup'},
     {t:'img', src:'img/kleindochter.webp', l:'Gewoon mee met de kleinkinderen', s:'Niet thuis blijven zitten'},
+    {t:'vid', src:'vid/studio-draai.mp4', poster:'img/studio.webp', l:'Bekijk hem van alle kanten', s:'Vermeiren Carpo&nbsp;4'},
     {t:'img', src:'img/dochter.webp', l:'Jij regelt het, wij doen de rest', s:'Voor je moeder, vader of partner'},
     {t:'img', src:'img/voordeur.webp', l:'Morgen bij je thuis', s:'In heel Nederland'},
     {t:'img', src:'img/mand.webp', l:'Boodschappen in de mand', s:'Brood, bloemen, de krant'},
