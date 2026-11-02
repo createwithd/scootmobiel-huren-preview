@@ -553,7 +553,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
 
   /* ---------- galerij ---------- */
   const media = [
-    {t:'img', src:'img/studio.webp', l:'Vermeiren Carpo&nbsp;4 huren', s:['Morgen bij je thuis · uitleg en proefrondje aan huis','€ 239 per maand of € 129 per week'], hs:[[86,13,'Comfortstoel','l'],[25,31,'Mand voorop','r'],[88,73,'Vier wielen, staat stevig','l',1]]},
+    {t:'img', src:'img/studio.webp', l:'Vermeiren Carpo&nbsp;4 huren', s:'Morgen bij je thuis · uitleg en proefrondje aan huis', hs:[[86,13,'Comfortstoel','l'],[25,31,'Mand voorop','r'],[88,73,'Vier wielen, staat stevig','l',1]]},
     {t:'vid', src:'vid/studio-draai.mp4', poster:'img/studio.webp', l:'Bekijk hem van alle kanten', s:'Vermeiren Carpo&nbsp;4'},
     {t:'img', src:'img/markt.webp', l:'Weer zelf naar de markt', s:'Boodschappen doen wanneer jij wilt'},
     {t:'img', src:'img/fysio.webp', l:'Zelf naar de fysio', s:'Ook met een nieuwe knie of heup'},
@@ -571,7 +571,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
       ? `<video src="${m.src}" poster="${m.poster}" autoplay muted loop playsinline></video>`
       : `<img src="${m.src}" alt="${m.l}">`)
       + (m.hs ? m.hs.map(h => `<span class="hs ${h[3]==='l'?'l':''} ${h[4]?'x':''}" style="left:${h[0]}%;top:${h[1]}%"><i></i>${h[2]}</span>`).join('') : '')
-      + `<span class="tag">Morgen bezorgd</span><div class="lbl"><b>${m.l}</b>${[].concat(m.s).map(x => `<small>${x}</small>`).join('')}</div>`;
+      + `<div class="lbl"><b>${m.l}</b>${[].concat(m.s).map(x => `<small>${x}</small>`).join('')}</div>`;
     [...thumbs.children].forEach((b,k) => b.setAttribute('aria-current', k === i));
   }
   media.forEach((m,i) => {
