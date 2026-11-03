@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231F2523'/%3E%3Ctext x='22' y='33' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='27' fill='%23fff'%3Ez%3C/text%3E%3Ccircle cx='35' cy='31' r='3.6' fill='%23C2491D'/%3E%3C/svg%3E">
 <title>Zorgeloos Mobiel · scootmobiel huren · Vermeiren Carpo&nbsp;4 morgen bij je thuis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -694,6 +693,19 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
       'Bezorgadres: ' + state.street + ', ' + state.pc + ' ' + state.city].join('\n');
     return 'https://wa.me/31570448955?text=' + encodeURIComponent(msg);
   }
+  function sendMail(){
+    const p = plans[state.plan];
+    const fd = new FormData();
+    Object.entries({
+      _subject: 'Nieuwe aanvraag Zorgeloos Mobiel: ' + state.name + ' (' + p.label + ')',
+      _cc: 'dennis@create-convert.nl', _replyto: state.mail, _template: 'table', _captcha: 'false',
+      Naam: state.name, Mobiel: state.phone, 'E-mail': state.mail,
+      Bezorgadres: state.street + ', ' + state.pc + ' ' + state.city,
+      Huur: p.label + ' (€ ' + p.price + ' ' + p.per + ')', 'Zorgeloos-dekking': state.zorg ? 'ja' : 'nee',
+      Voor: lab('who'), Reden: lab('why'), Vanaf: state.when === 'datum' ? state.date : lab('when')
+    }).forEach(([k, v]) => fd.append(k, v));
+    fetch('https://formsubmit.co/ajax/info@voortmanschilderwerken.nl', { method: 'POST', body: fd, headers: { Accept: 'application/json' }, keepalive: true }).catch(() => {});
+  }
   function esc(t){ return String(t || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
   function next(){
     const s = steps[step];
@@ -705,6 +717,7 @@ footer.site{background:#171c1a;color:#aab0ac;font-size:15px;padding:28px 0;text-
       let ok = true;
       [['name','eName', v => v.length > 1],['phone','ePhone', v => v.replace(/\D/g,'').length >= 10],['mail','eMail', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)],['street','eStreet', v => /\D{2,}.*\d/.test(v)],['pc','ePc', v => /^\d{4}\s?[a-zA-Z]{2}$/.test(v) && state.city.length > 1]].forEach(([k,e,f]) => { const good = f(state[k]); $('#'+e).style.display = good ? 'none' : 'block'; ok = ok && good; });
       if (!ok) return;
+      sendMail();
       window.open(waLink(), '_blank', 'noopener');
     }
     step++; render();
